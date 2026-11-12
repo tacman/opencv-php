@@ -1,0 +1,11 @@
+opencv-php
+Copyright 2026 Survos
+
+This product includes software developed by the OpenCV project
+(https://opencv.org/), licensed under the Apache License 2.0:
+
+  gen/vendor/hdr_parser.py   OpenCV's binding header parser, copied unmodified
+                             from modules/python/src2/hdr_parser.py at tag 5.1.0.
+
+The files under src/generated/, stubs/opencv.stub.php and api/ are derived
+from OpenCV's public headers, including their documentation comments.

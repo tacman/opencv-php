@@ -1,0 +1,1120 @@
+{
+    "source": "opencv-5.1.0.json",
+    "functions": 340,
+    "classes": 39,
+    "methods": 273,
+    "constants": 932,
+    "skipped": 24,
+    "unsupported_types": {
+        "Ptr_FeatureDetector": 2,
+        "RNG*": 1,
+        "Ptr_float": 1
+    },
+    "wrapped": {
+        "core": {
+            "functions": [
+                "CV\\borderInterpolate",
+                "CV\\copyMakeBorder",
+                "CV\\add",
+                "CV\\subtract",
+                "CV\\multiply",
+                "CV\\divide (2 overloads)",
+                "CV\\scaleAdd",
+                "CV\\addWeighted",
+                "CV\\convertScaleAbs",
+                "CV\\LUT",
+                "CV\\sumElems",
+                "CV\\hasNonZero",
+                "CV\\countNonZero",
+                "CV\\findNonZero",
+                "CV\\mean",
+                "CV\\meanStdDev",
+                "CV\\norm (2 overloads)",
+                "CV\\PSNR",
+                "CV\\batchDistance",
+                "CV\\normalize",
+                "CV\\minMaxLoc",
+                "CV\\reduceArgMin",
+                "CV\\reduceArgMax",
+                "CV\\reduce (2 overloads)",
+                "CV\\merge",
+                "CV\\split (2 overloads)",
+                "CV\\mixChannels",
+                "CV\\extractChannel",
+                "CV\\insertChannel",
+                "CV\\flip",
+                "CV\\flipND",
+                "CV\\squeeze",
+                "CV\\unsqueeze",
+                "CV\\flatten",
+                "CV\\reshape",
+                "CV\\concat",
+                "CV\\slice",
+                "CV\\broadcast",
+                "CV\\texpr",
+                "CV\\rotate",
+                "CV\\repeat (2 overloads)",
+                "CV\\hconcat",
+                "CV\\vconcat",
+                "CV\\bitwise_and",
+                "CV\\bitwise_or",
+                "CV\\bitwise_xor",
+                "CV\\bitwise_not",
+                "CV\\absdiff",
+                "CV\\copyTo",
+                "CV\\inRange",
+                "CV\\compare",
+                "CV\\min",
+                "CV\\max",
+                "CV\\sqrt",
+                "CV\\pow",
+                "CV\\exp",
+                "CV\\log",
+                "CV\\polarToCart",
+                "CV\\cartToPolar",
+                "CV\\phase",
+                "CV\\magnitude",
+                "CV\\checkRange",
+                "CV\\patchNaNs",
+                "CV\\finiteMask",
+                "CV\\gemm",
+                "CV\\mulTransposed",
+                "CV\\transpose (2 overloads)",
+                "CV\\transposeND",
+                "CV\\transform",
+                "CV\\perspectiveTransform",
+                "CV\\completeSymm",
+                "CV\\setIdentity",
+                "CV\\determinant",
+                "CV\\trace",
+                "CV\\invert",
+                "CV\\solve",
+                "CV\\sort",
+                "CV\\sortIdx",
+                "CV\\solveCubic",
+                "CV\\solvePoly",
+                "CV\\eigen",
+                "CV\\eigenNonSymmetric",
+                "CV\\calcCovarMatrix",
+                "CV\\PCACompute (2 overloads)",
+                "CV\\PCACompute2 (2 overloads)",
+                "CV\\PCAProject",
+                "CV\\PCABackProject",
+                "CV\\SVDecomp",
+                "CV\\SVBackSubst",
+                "CV\\Mahalanobis",
+                "CV\\dft",
+                "CV\\idft",
+                "CV\\dct",
+                "CV\\idct",
+                "CV\\mulSpectrums",
+                "CV\\divSpectrums",
+                "CV\\getOptimalDFTSize",
+                "CV\\setRNGSeed",
+                "CV\\randu",
+                "CV\\randn",
+                "CV\\kmeans",
+                "CV\\cubeRoot",
+                "CV\\fastAtan2",
+                "CV\\ipp\\useIPP",
+                "CV\\ipp\\setUseIPP",
+                "CV\\ipp\\getIppVersion",
+                "CV\\ipp\\useIPP_NotExact",
+                "CV\\ipp\\setUseIPP_NotExact",
+                "CV\\solveLP (2 overloads)",
+                "CV\\linearAssignment",
+                "CV\\rectangleIntersectionArea",
+                "CV\\setNumThreads",
+                "CV\\getNumThreads",
+                "CV\\getThreadNum",
+                "CV\\getBuildInformation",
+                "CV\\getVersionString",
+                "CV\\getVersionMajor",
+                "CV\\getVersionMinor",
+                "CV\\getVersionRevision",
+                "CV\\getTickCount",
+                "CV\\getTickFrequency",
+                "CV\\getCPUTickCount",
+                "CV\\checkHardwareSupport",
+                "CV\\getHardwareFeatureName",
+                "CV\\getCPUFeaturesLine",
+                "CV\\getNumberOfCPUs",
+                "CV\\getDefaultAlgorithmHint",
+                "CV\\setUseOptimized",
+                "CV\\useOptimized",
+                "CV\\samples\\findFile",
+                "CV\\samples\\findFileOrKeep",
+                "CV\\samples\\addSamplesDataSearchPath",
+                "CV\\samples\\addSamplesDataSearchSubDirectory"
+            ],
+            "classes": {
+                "CV\\ReduceParams": {
+                    "methods": [
+                        "__construct"
+                    ],
+                    "properties": [
+                        "rtype",
+                        "axes",
+                        "keepdims",
+                        "dtype"
+                    ]
+                },
+                "CV\\Algorithm": {
+                    "methods": [
+                        "clear",
+                        "write",
+                        "read",
+                        "empty",
+                        "save",
+                        "getDefaultName"
+                    ],
+                    "properties": []
+                },
+                "CV\\FileStorage": {
+                    "methods": [
+                        "__construct",
+                        "open",
+                        "isOpened",
+                        "release",
+                        "releaseAndGetString",
+                        "getFirstTopLevelNode",
+                        "root",
+                        "getNode",
+                        "write",
+                        "writeComment",
+                        "startWriteStruct",
+                        "endWriteStruct",
+                        "getFormat"
+                    ],
+                    "properties": []
+                },
+                "CV\\FileNode": {
+                    "methods": [
+                        "__construct",
+                        "getNode",
+                        "at",
+                        "keys",
+                        "type",
+                        "empty",
+                        "isNone",
+                        "isSeq",
+                        "isMap",
+                        "isInt",
+                        "isReal",
+                        "isString",
+                        "isNamed",
+                        "name",
+                        "size",
+                        "rawSize",
+                        "real",
+                        "string",
+                        "mat"
+                    ],
+                    "properties": []
+                },
+                "CV\\KeyPoint": {
+                    "methods": [
+                        "__construct",
+                        "convert",
+                        "overlap"
+                    ],
+                    "properties": [
+                        "pt",
+                        "size",
+                        "angle",
+                        "response",
+                        "octave",
+                        "class_id"
+                    ]
+                },
+                "CV\\DMatch": {
+                    "methods": [
+                        "__construct"
+                    ],
+                    "properties": [
+                        "queryIdx",
+                        "trainIdx",
+                        "imgIdx",
+                        "distance"
+                    ]
+                },
+                "CV\\TickMeter": {
+                    "methods": [
+                        "__construct",
+                        "start",
+                        "stop",
+                        "getTimeTicks",
+                        "getTimeMicro",
+                        "getTimeMilli",
+                        "getTimeSec",
+                        "getLastTimeTicks",
+                        "getLastTimeMicro",
+                        "getLastTimeMilli",
+                        "getLastTimeSec",
+                        "getCounter",
+                        "getFPS",
+                        "getAvgTimeSec",
+                        "getAvgTimeMilli",
+                        "reset"
+                    ],
+                    "properties": []
+                }
+            },
+            "array_structs": [
+                "cv::Moments"
+            ]
+        },
+        "geometry": {
+            "functions": [
+                "CV\\approxPolyDP",
+                "CV\\approxPolyN",
+                "CV\\minAreaRect",
+                "CV\\boxPoints",
+                "CV\\minEnclosingCircle",
+                "CV\\minEnclosingTriangle",
+                "CV\\minEnclosingConvexPolygon",
+                "CV\\moments",
+                "CV\\HuMoments",
+                "CV\\matchShapes",
+                "CV\\convexHull",
+                "CV\\convexityDefects",
+                "CV\\isContourConvex",
+                "CV\\intersectConvexConvex",
+                "CV\\fitEllipse",
+                "CV\\fitEllipseAMS",
+                "CV\\fitEllipseDirect",
+                "CV\\getClosestEllipsePoints",
+                "CV\\fitLine",
+                "CV\\pointPolygonTest",
+                "CV\\rotatedRectangleIntersection",
+                "CV\\arcLength",
+                "CV\\contourArea",
+                "CV\\boundingRect",
+                "CV\\getRotationMatrix2D",
+                "CV\\invertAffineTransform",
+                "CV\\getPerspectiveTransform",
+                "CV\\getAffineTransform",
+                "CV\\Rodrigues",
+                "CV\\findHomography (2 overloads)",
+                "CV\\RQDecomp3x3",
+                "CV\\decomposeProjectionMatrix",
+                "CV\\matMulDeriv",
+                "CV\\composeRT",
+                "CV\\projectPoints",
+                "CV\\projectPointsSepJ",
+                "CV\\solvePnP",
+                "CV\\solvePnPRansac (2 overloads)",
+                "CV\\solveP3P",
+                "CV\\solvePnPRefineLM",
+                "CV\\solvePnPRefineVVS",
+                "CV\\solvePnPGeneric",
+                "CV\\convertPointsToHomogeneous",
+                "CV\\convertPointsFromHomogeneous",
+                "CV\\findFundamentalMat (3 overloads)",
+                "CV\\findEssentialMat (4 overloads)",
+                "CV\\decomposeEssentialMat",
+                "CV\\recoverPose (4 overloads)",
+                "CV\\computeCorrespondEpilines",
+                "CV\\triangulatePoints",
+                "CV\\correctMatches",
+                "CV\\sampsonDistance",
+                "CV\\estimateAffine3D (2 overloads)",
+                "CV\\estimateTranslation3D",
+                "CV\\estimateAffine2D (2 overloads)",
+                "CV\\estimateAffinePartial2D",
+                "CV\\estimateTranslation2D",
+                "CV\\decomposeHomographyMat",
+                "CV\\filterHomographyDecompByVisibleRefpoints",
+                "CV\\calibrationMatrixValues",
+                "CV\\getDefaultNewCameraMatrix",
+                "CV\\getOptimalNewCameraMatrix",
+                "CV\\undistortPoints",
+                "CV\\undistortImagePoints",
+                "CV\\fisheye\\projectPoints",
+                "CV\\fisheye\\distortPoints (2 overloads)",
+                "CV\\fisheye\\undistortPoints",
+                "CV\\fisheye\\estimateNewCameraMatrixForUndistortRectify",
+                "CV\\fisheye\\solvePnP",
+                "CV\\fisheye\\solvePnPRansac",
+                "CV\\buildMST",
+                "CV\\normalEstimate"
+            ],
+            "classes": {
+                "CV\\Subdiv2D": {
+                    "methods": [
+                        "__construct",
+                        "initDelaunay",
+                        "initDelaunay2f",
+                        "insert",
+                        "locate",
+                        "findNearest",
+                        "getEdgeList",
+                        "getLeadingEdgeList",
+                        "getTriangleList",
+                        "getVoronoiFacetList",
+                        "getVertex",
+                        "getEdge",
+                        "nextEdge",
+                        "rotateEdge",
+                        "symEdge",
+                        "edgeOrg",
+                        "edgeDst"
+                    ],
+                    "properties": []
+                },
+                "CV\\UsacParams": {
+                    "methods": [
+                        "__construct"
+                    ],
+                    "properties": [
+                        "confidence",
+                        "isParallel",
+                        "loIterations",
+                        "loMethod",
+                        "loSampleSize",
+                        "maxIterations",
+                        "neighborsSearch",
+                        "randomGeneratorState",
+                        "sampler",
+                        "score",
+                        "threshold",
+                        "final_polisher",
+                        "final_polisher_iterations"
+                    ]
+                },
+                "CV\\MSTEdge": {
+                    "methods": [],
+                    "properties": [
+                        "source",
+                        "target",
+                        "weight"
+                    ]
+                }
+            }
+        },
+        "imgcodecs": {
+            "functions": [
+                "CV\\imread",
+                "CV\\imreadWithMetadata",
+                "CV\\imreadmulti (2 overloads)",
+                "CV\\imreadanimation",
+                "CV\\imdecodeanimation",
+                "CV\\imwriteanimation",
+                "CV\\imencodeanimation",
+                "CV\\imcount",
+                "CV\\imwrite",
+                "CV\\imwriteWithMetadata",
+                "CV\\imwritemulti",
+                "CV\\imdecode",
+                "CV\\imdecodeWithMetadata",
+                "CV\\imdecodemulti",
+                "CV\\imencode",
+                "CV\\imencodeWithMetadata",
+                "CV\\imencodemulti",
+                "CV\\haveImageReader",
+                "CV\\haveImageWriter"
+            ],
+            "classes": {
+                "CV\\Animation": {
+                    "methods": [
+                        "__construct"
+                    ],
+                    "properties": [
+                        "loop_count",
+                        "bgcolor",
+                        "durations",
+                        "frames",
+                        "still_image"
+                    ]
+                }
+            }
+        },
+        "imgproc": {
+            "functions": [
+                "CV\\createLineSegmentDetector",
+                "CV\\getGaussianKernel",
+                "CV\\getDerivKernels",
+                "CV\\getGaborKernel",
+                "CV\\getStructuringElement",
+                "CV\\medianBlur",
+                "CV\\GaussianBlur",
+                "CV\\bilateralFilter",
+                "CV\\boxFilter",
+                "CV\\sqrBoxFilter",
+                "CV\\blur",
+                "CV\\stackBlur",
+                "CV\\filter2D",
+                "CV\\filter2Dp",
+                "CV\\sepFilter2D",
+                "CV\\Sobel",
+                "CV\\spatialGradient",
+                "CV\\Scharr",
+                "CV\\Laplacian",
+                "CV\\Canny (2 overloads)",
+                "CV\\cornerMinEigenVal",
+                "CV\\cornerHarris",
+                "CV\\cornerEigenValsAndVecs",
+                "CV\\preCornerDetect",
+                "CV\\cornerSubPix",
+                "CV\\HoughLines",
+                "CV\\HoughLinesP",
+                "CV\\HoughLinesPointSet",
+                "CV\\HoughCircles",
+                "CV\\erode",
+                "CV\\dilate",
+                "CV\\morphologyEx",
+                "CV\\resize",
+                "CV\\warpAffine",
+                "CV\\warpPerspective",
+                "CV\\remap",
+                "CV\\convertMaps",
+                "CV\\undistort",
+                "CV\\initUndistortRectifyMap",
+                "CV\\initInverseRectificationMap",
+                "CV\\fisheye\\initUndistortRectifyMap",
+                "CV\\fisheye\\undistortImage",
+                "CV\\getRectSubPix",
+                "CV\\warpPolar",
+                "CV\\integral3",
+                "CV\\integral",
+                "CV\\integral2",
+                "CV\\accumulate",
+                "CV\\accumulateSquare",
+                "CV\\accumulateProduct",
+                "CV\\accumulateWeighted",
+                "CV\\phaseCorrelate",
+                "CV\\phaseCorrelateIterative",
+                "CV\\createHanningWindow",
+                "CV\\threshold",
+                "CV\\thresholdWithMask",
+                "CV\\adaptiveThreshold",
+                "CV\\pyrDown",
+                "CV\\pyrUp",
+                "CV\\calcHist",
+                "CV\\calcBackProject",
+                "CV\\compareHist",
+                "CV\\equalizeHist",
+                "CV\\createCLAHE",
+                "CV\\watershed",
+                "CV\\pyrMeanShiftFiltering",
+                "CV\\grabCut",
+                "CV\\distanceTransformWithLabels",
+                "CV\\distanceTransform",
+                "CV\\floodFill",
+                "CV\\blendLinear",
+                "CV\\alphaComposite",
+                "CV\\cvtColor",
+                "CV\\cvtColorTwoPlane",
+                "CV\\demosaicing",
+                "CV\\matchTemplate",
+                "CV\\connectedComponentsWithAlgorithm",
+                "CV\\connectedComponents",
+                "CV\\connectedComponentsWithStatsWithAlgorithm",
+                "CV\\connectedComponentsWithStats",
+                "CV\\findContours",
+                "CV\\findContoursLinkRuns",
+                "CV\\createGeneralizedHoughBallard",
+                "CV\\createGeneralizedHoughGuil",
+                "CV\\applyColorMap (2 overloads)",
+                "CV\\line",
+                "CV\\arrowedLine",
+                "CV\\drawFrameAxes",
+                "CV\\rectangle (2 overloads)",
+                "CV\\circle",
+                "CV\\ellipse (2 overloads)",
+                "CV\\drawMarker",
+                "CV\\fillConvexPoly",
+                "CV\\fillPoly",
+                "CV\\polylines",
+                "CV\\drawContours",
+                "CV\\clipLine",
+                "CV\\ellipse2Poly",
+                "CV\\putText (2 overloads)",
+                "CV\\getTextSize (2 overloads)",
+                "CV\\getFontScaleFromHeight",
+                "CV\\HoughLinesWithAccumulator",
+                "CV\\HoughCirclesWithAccumulator"
+            ],
+            "classes": {
+                "CV\\GeneralizedHough": {
+                    "methods": [
+                        "setTemplate",
+                        "detect",
+                        "setCannyLowThresh",
+                        "getCannyLowThresh",
+                        "setCannyHighThresh",
+                        "getCannyHighThresh",
+                        "setMinDist",
+                        "getMinDist",
+                        "setDp",
+                        "getDp",
+                        "setMaxBufferSize",
+                        "getMaxBufferSize"
+                    ],
+                    "properties": []
+                },
+                "CV\\GeneralizedHoughBallard": {
+                    "methods": [
+                        "setLevels",
+                        "getLevels",
+                        "setVotesThreshold",
+                        "getVotesThreshold"
+                    ],
+                    "properties": []
+                },
+                "CV\\GeneralizedHoughGuil": {
+                    "methods": [
+                        "setXi",
+                        "getXi",
+                        "setLevels",
+                        "getLevels",
+                        "setAngleEpsilon",
+                        "getAngleEpsilon",
+                        "setMinAngle",
+                        "getMinAngle",
+                        "setMaxAngle",
+                        "getMaxAngle",
+                        "setAngleStep",
+                        "getAngleStep",
+                        "setAngleThresh",
+                        "getAngleThresh",
+                        "setMinScale",
+                        "getMinScale",
+                        "setMaxScale",
+                        "getMaxScale",
+                        "setScaleStep",
+                        "getScaleStep",
+                        "setScaleThresh",
+                        "getScaleThresh",
+                        "setPosThresh",
+                        "getPosThresh"
+                    ],
+                    "properties": []
+                },
+                "CV\\CLAHE": {
+                    "methods": [
+                        "apply",
+                        "setClipLimit",
+                        "getClipLimit",
+                        "setTilesGridSize",
+                        "getTilesGridSize",
+                        "setBitShift",
+                        "getBitShift",
+                        "collectGarbage"
+                    ],
+                    "properties": []
+                },
+                "CV\\LineSegmentDetector": {
+                    "methods": [
+                        "detect",
+                        "drawSegments",
+                        "compareSegments"
+                    ],
+                    "properties": []
+                },
+                "CV\\FontFace": {
+                    "methods": [
+                        "__construct",
+                        "set",
+                        "getName",
+                        "setInstance",
+                        "getInstance",
+                        "setBuiltinFont"
+                    ],
+                    "properties": []
+                }
+            },
+            "array_structs": [
+                "cv::Filter2DParams"
+            ]
+        },
+        "objdetect": {
+            "functions": [
+                "CV\\findChessboardCorners",
+                "CV\\checkChessboard",
+                "CV\\findChessboardCornersSBWithMeta",
+                "CV\\findChessboardCornersSB",
+                "CV\\estimateChessboardSharpness",
+                "CV\\find4QuadCornerSubpix",
+                "CV\\drawChessboardCorners",
+                "CV\\aruco\\drawDetectedMarkers",
+                "CV\\aruco\\generateImageMarker",
+                "CV\\aruco\\getPredefinedDictionary",
+                "CV\\aruco\\extendDictionary",
+                "CV\\aruco\\drawDetectedCornersCharuco",
+                "CV\\aruco\\drawDetectedDiamonds"
+            ],
+            "classes": {
+                "CV\\QRCodeEncoder": {
+                    "methods": [
+                        "create",
+                        "encode",
+                        "encodeStructuredAppend"
+                    ],
+                    "properties": []
+                },
+                "CV\\QRCodeEncoder_Params": {
+                    "methods": [
+                        "__construct"
+                    ],
+                    "properties": [
+                        "version",
+                        "correction_level",
+                        "mode",
+                        "structure_number"
+                    ]
+                },
+                "CV\\GraphicalCodeDetector": {
+                    "methods": [
+                        "detect",
+                        "decode",
+                        "detectAndDecode",
+                        "detectMulti",
+                        "decodeMulti",
+                        "detectAndDecodeMulti",
+                        "detectAndDecodeBytes",
+                        "decodeBytes",
+                        "decodeBytesMulti",
+                        "detectAndDecodeBytesMulti"
+                    ],
+                    "properties": []
+                },
+                "CV\\QRCodeDetector": {
+                    "methods": [
+                        "__construct",
+                        "setEpsX",
+                        "setEpsY",
+                        "setUseAlignmentMarkers",
+                        "decodeCurved",
+                        "detectAndDecodeCurved",
+                        "getEncoding"
+                    ],
+                    "properties": []
+                },
+                "CV\\QRCodeDetectorAruco": {
+                    "methods": [
+                        "__construct",
+                        "getDetectorParameters",
+                        "setDetectorParameters",
+                        "getArucoParameters",
+                        "setArucoParameters"
+                    ],
+                    "properties": []
+                },
+                "CV\\QRCodeDetectorAruco_Params": {
+                    "methods": [
+                        "__construct"
+                    ],
+                    "properties": [
+                        "minModuleSizeInPyramid",
+                        "maxRotation",
+                        "maxModuleSizeMismatch",
+                        "maxTimingPatternMismatch",
+                        "maxPenalties",
+                        "maxColorsMismatch",
+                        "scaleTimingPatternScore"
+                    ]
+                },
+                "CV\\CirclesGridFinderParameters": {
+                    "methods": [
+                        "__construct"
+                    ],
+                    "properties": [
+                        "densityNeighborhoodSize",
+                        "minDensity",
+                        "kmeansAttempts",
+                        "minDistanceToAddKeypoint",
+                        "keypointScale",
+                        "minGraphConfidence",
+                        "vertexGain",
+                        "vertexPenalty",
+                        "existingVertexGain",
+                        "edgeGain",
+                        "edgePenalty",
+                        "convexHullFactor",
+                        "minRNGEdgeSwitchDist",
+                        "gridType",
+                        "squareSize",
+                        "maxRectifiedDistance"
+                    ]
+                },
+                "CV\\aruco\\Board": {
+                    "methods": [
+                        "__construct",
+                        "getDictionary",
+                        "getObjPoints",
+                        "getIds",
+                        "getRightBottomCorner",
+                        "matchImagePoints",
+                        "generateImage"
+                    ],
+                    "properties": []
+                },
+                "CV\\aruco\\GridBoard": {
+                    "methods": [
+                        "__construct",
+                        "getGridSize",
+                        "getMarkerLength",
+                        "getMarkerSeparation"
+                    ],
+                    "properties": []
+                },
+                "CV\\aruco\\CharucoBoard": {
+                    "methods": [
+                        "__construct",
+                        "setLegacyPattern",
+                        "getLegacyPattern",
+                        "getChessboardSize",
+                        "getSquareLength",
+                        "getMarkerLength",
+                        "getChessboardCorners",
+                        "checkCharucoCornersCollinear"
+                    ],
+                    "properties": []
+                },
+                "CV\\aruco\\DetectorParameters": {
+                    "methods": [
+                        "__construct",
+                        "readDetectorParameters",
+                        "writeDetectorParameters"
+                    ],
+                    "properties": [
+                        "adaptiveThreshWinSizeMin",
+                        "adaptiveThreshWinSizeMax",
+                        "adaptiveThreshWinSizeStep",
+                        "adaptiveThreshConstant",
+                        "minMarkerPerimeterRate",
+                        "maxMarkerPerimeterRate",
+                        "polygonalApproxAccuracyRate",
+                        "minCornerDistanceRate",
+                        "minDistanceToBorder",
+                        "minMarkerDistanceRate",
+                        "minGroupDistance",
+                        "cornerRefinementMethod",
+                        "cornerRefinementWinSize",
+                        "relativeCornerRefinmentWinSize",
+                        "cornerRefinementMaxIterations",
+                        "cornerRefinementMinAccuracy",
+                        "markerBorderBits",
+                        "perspectiveRemovePixelPerCell",
+                        "perspectiveRemoveIgnoredMarginPerCell",
+                        "maxErroneousBitsInBorderRate",
+                        "minOtsuStdDev",
+                        "errorCorrectionRate",
+                        "aprilTagQuadDecimate",
+                        "aprilTagQuadSigma",
+                        "aprilTagMinClusterPixels",
+                        "aprilTagMaxNmaxima",
+                        "aprilTagCriticalRad",
+                        "aprilTagMaxLineFitMse",
+                        "aprilTagMinWhiteBlackDiff",
+                        "aprilTagDeglitch",
+                        "detectInvertedMarker",
+                        "useAruco3Detection",
+                        "minSideLengthCanonicalImg",
+                        "minMarkerLengthRatioOriginalImg",
+                        "validBitIdThreshold"
+                    ]
+                },
+                "CV\\aruco\\RefineParameters": {
+                    "methods": [
+                        "__construct",
+                        "readRefineParameters",
+                        "writeRefineParameters"
+                    ],
+                    "properties": [
+                        "minRepDistance",
+                        "errorCorrectionRate",
+                        "checkAllOrders"
+                    ]
+                },
+                "CV\\aruco\\ArucoDetector": {
+                    "methods": [
+                        "__construct",
+                        "detectMarkers",
+                        "detectMarkersWithConfidence",
+                        "refineDetectedMarkers",
+                        "detectMarkersMultiDict",
+                        "getDictionary",
+                        "setDictionary",
+                        "getDictionaries",
+                        "setDictionaries",
+                        "getDetectorParameters",
+                        "setDetectorParameters",
+                        "getRefineParameters",
+                        "setRefineParameters",
+                        "write",
+                        "read"
+                    ],
+                    "properties": []
+                },
+                "CV\\aruco\\Dictionary": {
+                    "methods": [
+                        "__construct",
+                        "readDictionary",
+                        "writeDictionary",
+                        "identify",
+                        "getDistanceToId",
+                        "generateImageMarker",
+                        "getByteListFromBits",
+                        "getBitsFromByteList",
+                        "getMarkerBits"
+                    ],
+                    "properties": [
+                        "bytesList",
+                        "markerSize",
+                        "maxCorrectionBits"
+                    ]
+                },
+                "CV\\barcode\\BarcodeDetector": {
+                    "methods": [
+                        "__construct",
+                        "decodeWithType",
+                        "detectAndDecodeWithType",
+                        "getDownsamplingThreshold",
+                        "setDownsamplingThreshold",
+                        "getDetectorScales",
+                        "setDetectorScales",
+                        "getGradientThreshold",
+                        "setGradientThreshold"
+                    ],
+                    "properties": []
+                },
+                "CV\\aruco\\CharucoParameters": {
+                    "methods": [
+                        "__construct"
+                    ],
+                    "properties": [
+                        "cameraMatrix",
+                        "distCoeffs",
+                        "minMarkers",
+                        "tryRefineMarkers",
+                        "checkMarkers"
+                    ]
+                },
+                "CV\\aruco\\CharucoDetector": {
+                    "methods": [
+                        "__construct",
+                        "getBoard",
+                        "setBoard",
+                        "getCharucoParameters",
+                        "setCharucoParameters",
+                        "getDetectorParameters",
+                        "setDetectorParameters",
+                        "getRefineParameters",
+                        "setRefineParameters",
+                        "detectBoard",
+                        "detectDiamonds"
+                    ],
+                    "properties": []
+                },
+                "CV\\FaceDetectorYN": {
+                    "methods": [
+                        "setInputSize",
+                        "getInputSize",
+                        "setScoreThreshold",
+                        "getScoreThreshold",
+                        "setNMSThreshold",
+                        "getNMSThreshold",
+                        "setTopK",
+                        "getTopK",
+                        "detect",
+                        "create"
+                    ],
+                    "properties": []
+                },
+                "CV\\FaceRecognizerSF": {
+                    "methods": [
+                        "alignCrop",
+                        "feature",
+                        "match",
+                        "create"
+                    ],
+                    "properties": []
+                },
+                "CV\\mcc\\CChecker": {
+                    "methods": [
+                        "create",
+                        "setTarget",
+                        "setBox",
+                        "setChartsRGB",
+                        "setChartsYCbCr",
+                        "setCost",
+                        "setCenter",
+                        "getTarget",
+                        "getBox",
+                        "getColorCharts",
+                        "getChartsRGB",
+                        "getChartsYCbCr",
+                        "getCost",
+                        "getCenter"
+                    ],
+                    "properties": []
+                },
+                "CV\\mcc\\DetectorParametersMCC": {
+                    "methods": [
+                        "__construct"
+                    ],
+                    "properties": [
+                        "adaptiveThreshWinSizeMin",
+                        "adaptiveThreshWinSizeMax",
+                        "adaptiveThreshWinSizeStep",
+                        "adaptiveThreshConstant",
+                        "minContoursAreaRate",
+                        "minContoursArea",
+                        "confidenceThreshold",
+                        "minContourSolidity",
+                        "findCandidatesApproxPolyDPEpsMultiplier",
+                        "borderWidth",
+                        "B0factor",
+                        "maxError",
+                        "minContourPointsAllowed",
+                        "minContourLengthAllowed",
+                        "minInterContourDistance",
+                        "minInterCheckerDistance",
+                        "minImageSize",
+                        "minGroupSize"
+                    ]
+                },
+                "CV\\mcc\\CCheckerDetector": {
+                    "methods": [
+                        "processWithROI",
+                        "process",
+                        "getBestColorChecker",
+                        "getListColorChecker",
+                        "create",
+                        "draw",
+                        "getRefColors",
+                        "setDetectionParams",
+                        "setColorChartType",
+                        "getDetectionParams",
+                        "getColorChartType"
+                    ],
+                    "properties": []
+                }
+            }
+        }
+    },
+    "skipped_detail": [
+        {
+            "module": "core",
+            "name": "cv.randShuffle",
+            "reason": "pointer argument RNG* rng"
+        },
+        {
+            "module": "core",
+            "name": "cv.MatShape.empty",
+            "reason": "tensor shapes are not mapped yet"
+        },
+        {
+            "module": "core",
+            "name": "cv.MatShape.isScalar",
+            "reason": "tensor shapes are not mapped yet"
+        },
+        {
+            "module": "core",
+            "name": "cv.MatShape.clear",
+            "reason": "tensor shapes are not mapped yet"
+        },
+        {
+            "module": "core",
+            "name": "cv.MatShape.erase",
+            "reason": "tensor shapes are not mapped yet"
+        },
+        {
+            "module": "core",
+            "name": "cv.MatShape.channels",
+            "reason": "tensor shapes are not mapped yet"
+        },
+        {
+            "module": "core",
+            "name": "cv.MatShape.hasSymbols",
+            "reason": "tensor shapes are not mapped yet"
+        },
+        {
+            "module": "core",
+            "name": "cv.MatShape.expand",
+            "reason": "tensor shapes are not mapped yet"
+        },
+        {
+            "module": "core",
+            "name": "cv.MatShape.squeeze",
+            "reason": "tensor shapes are not mapped yet"
+        },
+        {
+            "module": "core",
+            "name": "cv.MatShape.unsqueeze",
+            "reason": "tensor shapes are not mapped yet"
+        },
+        {
+            "module": "core",
+            "name": "cv.MatShape.flatten",
+            "reason": "tensor shapes are not mapped yet"
+        },
+        {
+            "module": "core",
+            "name": "cv.MatShape.reshape",
+            "reason": "tensor shapes are not mapped yet"
+        },
+        {
+            "module": "core",
+            "name": "cv.MatShape.toLayout",
+            "reason": "tensor shapes are not mapped yet"
+        },
+        {
+            "module": "core",
+            "name": "cv.RotatedRect.RotatedRect",
+            "reason": "method of a type mapped to a PHP array"
+        },
+        {
+            "module": "core",
+            "name": "cv.RotatedRect.RotatedRect",
+            "reason": "method of a type mapped to a PHP array"
+        },
+        {
+            "module": "core",
+            "name": "cv.RotatedRect.RotatedRect",
+            "reason": "method of a type mapped to a PHP array"
+        },
+        {
+            "module": "core",
+            "name": "cv.RotatedRect.points",
+            "reason": "method of a type mapped to a PHP array"
+        },
+        {
+            "module": "core",
+            "name": "cv.RotatedRect.boundingRect",
+            "reason": "method of a type mapped to a PHP array"
+        },
+        {
+            "module": "core",
+            "name": "cv.RotatedRect.boundingRect2f",
+            "reason": "method of a type mapped to a PHP array"
+        },
+        {
+            "module": "imgcodecs",
+            "name": "cv.imread",
+            "reason": "same PHP signature as an earlier overload"
+        },
+        {
+            "module": "imgproc",
+            "name": "cv.wrapperEMD",
+            "reason": "argument type Ptr_float lowerBound"
+        },
+        {
+            "module": "imgproc",
+            "name": "cv.findContoursLinkRuns",
+            "reason": "same PHP signature as an earlier overload"
+        },
+        {
+            "module": "objdetect",
+            "name": "cv.findCirclesGrid",
+            "reason": "argument type Ptr_FeatureDetector blobDetector"
+        },
+        {
+            "module": "objdetect",
+            "name": "cv.findCirclesGrid",
+            "reason": "argument type Ptr_FeatureDetector blobDetector"
+        }
+    ]
+}

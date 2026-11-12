@@ -1,0 +1,19 @@
+{
+    "name": "survos/opencv-php",
+    "type": "php-ext",
+    "description": "PHP bindings for OpenCV 5, generated from OpenCV's own header annotations",
+    "license": "Apache-2.0",
+    "keywords": ["opencv", "computer vision", "image processing", "extension"],
+    "require": {
+        "php": ">=8.3"
+    },
+    "php-ext": {
+        "extension-name": "opencv",
+        "configure-options": [
+            {
+                "name": "with-opencv",
+                "description": "Build against the OpenCV 5 found by pkg-config (opencv5.pc)"
+            }
+        ]
+    }
+}

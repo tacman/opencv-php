@@ -1,0 +1,13 @@
+.git
+modules
+build
+autom4te.cache
+tests
+api
+# local phpize/make output must never reach the image: it is for another OS
+**/.libs
+**/*.lo
+**/*.o
+**/*.la
+**/*.dep
+**/.deps
