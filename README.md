@@ -77,10 +77,16 @@ With [PIE](https://github.com/php/pie), once the package is published:
 pie install survos/opencv-php
 ```
 
-On a development machine, consider installing without enabling it for every
-`php` run (delete the `conf.d/*opencv.ini` PIE writes) and loading it per
-project with `-d extension=opencv` or a project `php.ini`: Homebrew's OpenCV
-adds about 190 ms to each PHP start.
+**Start-up cost.** A distribution's full OpenCV links `objdetect` to `dnn`,
+OpenVINO and protobuf: about 90 libraries, 190 ms on every PHP start with
+Homebrew's. `bin/build-opencv-lean.sh` builds OpenCV with only the wrapped
+modules (about 8 minutes, needs `cmake`); against that the extension adds 7 ms
+on macOS and 3 ms on Linux, so it can be enabled for every PHP process:
+
+```bash
+bin/build-opencv-lean.sh ~/.local/opencv-lean
+PKG_CONFIG_PATH=~/.local/opencv-lean/lib/pkgconfig phpize && ./configure --with-opencv && make && make install
+```
 
 Until then PIE can build from a checkout: `pie repository:add path /path/to/opencv-php`
 then `pie install 'survos/opencv-php:*@dev'`.
