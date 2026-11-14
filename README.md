@@ -71,11 +71,14 @@ brew install opencv        # 5.x; Linux distros still ship 4.x, build 5 from sou
 phpize && ./configure --with-opencv && make && make test
 ```
 
-With [PIE](https://github.com/php/pie), once the package is published:
+With [PIE](https://github.com/php/pie), from a checkout (the package is not on Packagist yet):
 
 ```bash
-pie install survos/opencv-php
+pie repository:add path /path/to/opencv-php
+pie install 'survos/opencv-php:*@dev'
 ```
+
+Once it is on Packagist this becomes `pie install survos/opencv-php`.
 
 **Start-up cost.** A distribution's full OpenCV links `objdetect` to `dnn`,
 OpenVINO and protobuf: about 90 libraries, 190 ms on every PHP start with
@@ -87,9 +90,6 @@ on macOS and 3 ms on Linux, so it can be enabled for every PHP process:
 bin/build-opencv-lean.sh ~/.local/opencv-lean
 PKG_CONFIG_PATH=~/.local/opencv-lean/lib/pkgconfig phpize && ./configure --with-opencv && make && make install
 ```
-
-Until then PIE can build from a checkout: `pie repository:add path /path/to/opencv-php`
-then `pie install 'survos/opencv-php:*@dev'`.
 
 ## How values map
 
