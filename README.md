@@ -71,14 +71,16 @@ brew install opencv        # 5.x; Linux distros still ship 4.x, build 5 from sou
 phpize && ./configure --with-opencv && make && make test
 ```
 
-With [PIE](https://github.com/php/pie), from a checkout (the package is not on Packagist yet):
+With [PIE](https://github.com/php/pie):
 
 ```bash
-pie repository:add path /path/to/opencv-php
-pie install 'tacman/opencv-php:*@dev'
+pie install tacman/opencv-php
 ```
 
-Once it is on Packagist this becomes `pie install tacman/opencv-php`.
+PIE builds the extension on your machine, so OpenCV 5 must already be installed
+where `pkg-config` can find it. To build from a checkout instead:
+`pie repository:add path /path/to/opencv-php`, then
+`pie install 'tacman/opencv-php:*@dev'`.
 
 **Start-up cost.** A distribution's full OpenCV links `objdetect` to `dnn`,
 OpenVINO and protobuf: about 90 libraries, 190 ms on every PHP start with
