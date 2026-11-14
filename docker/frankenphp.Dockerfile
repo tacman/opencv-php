@@ -31,7 +31,7 @@ RUN git clone --depth 1 --branch ${OPENCV_VERSION} https://github.com/opencv/ope
     && cmake --install /build/opencv
 
 # The extension: generated sources are committed, so this is phpize + make.
-# Once the package is on Packagist this stage becomes `pie install survos/opencv-php`.
+# Once the package is on Packagist this stage becomes `pie install tacman/opencv-php`.
 COPY config.m4 /src/ext/
 COPY src /src/ext/src
 RUN cd /src/ext \

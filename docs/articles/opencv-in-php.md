@@ -4,7 +4,7 @@
 
 For years I've been jealous of the Python community, in part because they have OpenCV. We do a lot of image processing and analysis, and I kept writing little Python scripts and endpoints, and running servers, that existed only as a bridge to OpenCV. Mostly it was a pain to call out to Python.
 
-Three things changed that: the release of OpenCV 5, the tooling OpenCV ships for generating bindings, and AI tools that make it much easier to develop a PHP extension. So I wrote the extension I had played with and hoped for, for years: [survos/opencv-php](https://github.com/survos/opencv-php).
+Three things changed that: the release of OpenCV 5, the tooling OpenCV ships for generating bindings, and AI tools that make it much easier to develop a PHP extension. So I wrote the extension I had played with and hoped for, for years: [tacman/opencv-php](https://github.com/tacman/opencv-php).
 
 PHP has ImageMagick and GD, and they do basic image processing. They don't do image recognition, and that's where OpenCV shines.
 
@@ -88,7 +88,7 @@ OpenCV can write and read QR codes, so this round trip needs no other library:
 <?php
 use const CV\{INTER_NEAREST, BORDER_CONSTANT};
 
-$qr  = CV\QRCodeEncoder::create()->encode('https://github.com/survos/opencv-php');
+$qr  = CV\QRCodeEncoder::create()->encode('https://github.com/tacman/opencv-php');
 $big = CV\resize($qr, [0, 0], 8, 8, INTER_NEAREST);                 // 8 px per module
 $big = CV\copyMakeBorder($big, 32, 32, 32, 32, BORDER_CONSTANT, 255); // white quiet zone
 CV\imwrite('qr.png', $big);
@@ -99,7 +99,7 @@ printf("%s in %.1f ms\n", $text, (hrtime(true) - $start) / 1e6);
 ```
 
 ```
-https://github.com/survos/opencv-php in 6.4 ms
+https://github.com/tacman/opencv-php in 6.4 ms
 ```
 
 I compared it with the pure-PHP reader in chillerlan/php-qrcode on an M4 Pro:
@@ -134,7 +134,7 @@ You need PHP 8.3 or later (I build on 8.5), OpenCV 5, and a C++17 compiler. On m
 
 ```bash
 brew install opencv cmake
-git clone https://github.com/survos/opencv-php && cd opencv-php
+git clone https://github.com/tacman/opencv-php && cd opencv-php
 bin/build-opencv-lean.sh ~/.local/opencv-lean
 export PKG_CONFIG_PATH=~/.local/opencv-lean/lib/pkgconfig
 phpize && ./configure --with-opencv && make && make test
@@ -144,12 +144,12 @@ Or with [PIE](https://github.com/php/pie), which is what made me want this to be
 
 ```bash
 pie repository:add path /path/to/opencv-php
-pie install 'survos/opencv-php:*@dev'
+pie install 'tacman/opencv-php:*@dev'
 ```
 
 Linux distributions still ship OpenCV 4, so there you build OpenCV 5 from source; the lean build script and the Dockerfile both do that.
 
-The code, the coverage list and the FrankenPHP notes are at [github.com/survos/opencv-php](https://github.com/survos/opencv-php). If a function you need was skipped, `api/coverage.json` says why.
+The code, the coverage list and the FrankenPHP notes are at [github.com/tacman/opencv-php](https://github.com/tacman/opencv-php). If a function you need was skipped, `api/coverage.json` says why.
 
 ---
 

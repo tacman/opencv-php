@@ -75,10 +75,10 @@ With [PIE](https://github.com/php/pie), from a checkout (the package is not on P
 
 ```bash
 pie repository:add path /path/to/opencv-php
-pie install 'survos/opencv-php:*@dev'
+pie install 'tacman/opencv-php:*@dev'
 ```
 
-Once it is on Packagist this becomes `pie install survos/opencv-php`.
+Once it is on Packagist this becomes `pie install tacman/opencv-php`.
 
 **Start-up cost.** A distribution's full OpenCV links `objdetect` to `dnn`,
 OpenVINO and protobuf: about 90 libraries, 190 ms on every PHP start with
