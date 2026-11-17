@@ -1,0 +1,53 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+<div class="layout">
+    <nav class="toc" aria-label="Examples">
+        {% for group, examples in groups %}
+            <h2>{{ group }}</h2>
+            {% for item in examples %}<a href="#{{ item.id }}">{{ item.example.title }}</a>{% endfor %}
+        {% endfor %}
+    </nav>
+    <main>
+        <h1>OpenCV 5, called from PHP</h1>
+        <p class="lead">Before, after, and the PHP in between.{% if opencv %} Rendered with OpenCV {{ opencv }} on PHP {{ constant('PHP_MAJOR_VERSION') }}.{{ constant('PHP_MINOR_VERSION') }}.{% endif %}</p>
+
+        {% for group, examples in groups %}
+            <h2 class="group">{{ group }}</h2>
+            {% for item in examples %}
+                <section class="example" id="{{ item.id }}">
+                    <h3>{{ item.example.title }}</h3>
+                    <p>{{ item.example.description }}</p>
+
+                    {% if item.after %}
+                        <div class="pair">
+                            <figure>
+                                <figcaption>Before</figcaption>
+                                <img src="img/{{ item.before }}" alt="Input picture" loading="lazy">
+                            </figure>
+                            <figure>
+                                <figcaption>After{% if item.after|length > 1 %} · {{ item.after|length }} pictures{% endif %}</figcaption>
+                                {% if item.after|length == 1 %}
+                                    <img src="img/{{ item.after[0] }}" alt="Result" loading="lazy">
+                                {% else %}
+                                    <div class="pieces{{ item.after|length <= 4 ? ' few' }}">
+                                        {% for piece in item.after %}<img src="img/{{ piece }}" alt="Result {{ loop.index }}" loading="lazy">{% endfor %}
+                                    </div>
+                                {% endif %}
+                            </figure>
+                        </div>
+                    {% else %}
+                        <p class="note">Not run here. {{ item.example.needs }}</p>
+                    {% endif %}
+
+                    <details class="code">
+                        <summary><span class="show">Show the code</span><span class="hide">Hide the code</span></summary>
+                        <pre><code class="language-php">{{ item.code }}</code></pre>
+                        <pre class="run">php examples/run.php {{ item.id }}{{ item.example.input ? '' : ' photo.jpg' }}</pre>
+                    </details>
+                </section>
+            {% endfor %}
+        {% endfor %}
+    </main>
+</div>
+{% endblock %}

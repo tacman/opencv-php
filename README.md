@@ -6,21 +6,19 @@ the same source of truth the official Python, Java and JavaScript bindings use.
 Status: proof of concept. Built and tested on PHP 8.5 with OpenCV 5.1.0: macOS arm64 (NTS) and Debian 13 arm64 under FrankenPHP (ZTS).
 
 ```php
-use CV\Mat;
-use const CV\{COLOR_BGR2GRAY, THRESH_BINARY, RETR_EXTERNAL, CHAIN_APPROX_SIMPLE, INTER_AREA};
+$photo = CV\imread('photo.jpg');
 
-$img  = CV\imread('page.jpg');
-$gray = CV\cvtColor($img, COLOR_BGR2GRAY);
-[$t, $bin] = CV\threshold($gray, 128, 255, THRESH_BINARY);
-[$contours] = CV\findContours($bin, RETR_EXTERNAL, CHAIN_APPROX_SIMPLE);
+$small = CV\resize($photo, [800, 600]);
+$gray  = CV\cvtColor($small, CV\COLOR_BGR2GRAY);
+CV\imwrite('photo-gray.jpg', $gray);
 
-foreach ($contours as $c) {
-    [$x, $y, $w, $h] = CV\boundingRect($c);
-    CV\rectangle($img, [$x, $y, $w, $h], [0, 0, 255], 2);
-}
-$thumb = CV\resize($img, [400, 300], interpolation: INTER_AREA);
-[, $png] = CV\imencode('.png', $thumb);          // $png is a PHP string
+[$text] = (new CV\QRCodeDetector())->detectAndDecode(CV\imread('ticket.png'));   // read a QR code
 ```
+
+Function names and arguments are OpenCV's own, so the OpenCV documentation and
+any Python `cv2` example carry over. [`examples/`](examples/) has complete
+scripts: straightening a leaning gravestone, splitting a scan of several
+prints, reading QR codes and ArUco markers.
 
 ## What is covered
 
@@ -62,6 +60,61 @@ php -d extension=opencv demo/straighten.php /path/to/frames /tmp/straight
 `docs/frankenphp.md` covers running it under FrankenPHP
 (`docker/frankenphp.Dockerfile`), with measurements.
 
+## Examples
+
+`examples/src/` holds the examples: each is a method that takes a picture and
+returns the result, marked with an `#[Example]` attribute that carries its
+title, description and input picture.
+
+```php
+#[Example(
+    title: 'Crop every coin',
+    description: 'Coins on a blue cloth: whatever is not blue is an object. Keep the round ones, and cut a square around each.',
+    input: 'images/coins.jpg',
+)]
+public function cropCoins(Mat $photo): array
+```
+
+```bash
+php examples/run.php                      # list them
+php examples/run.php all                  # run them; results in examples/out/
+php examples/run.php objects.cropcoins    # run one
+```
+
+| Example | What it does |
+|---|---|
+| `gravestones.straighten` | Finds a headstone's leaning sides and warps the crop so they are vertical |
+| `gravestones.cutout` | Cuts the stone out of its background with GrabCut |
+| `gravestones.inscription` | Brings out worn lettering with CLAHE |
+| `scans.splitprints` | Cuts a scan of several photo prints into one upright file per print |
+| `scans.palette` | Finds a photograph's main colours with k-means |
+| `objects.cropcoins` | Crops every coin out of a photograph |
+| `codes.readqrcodes` | Finds and reads every QR code in a photograph |
+| `codes.findarucomarkers` | Detects ArUco markers with corners and ids |
+| `faces.detect`, `faces.match` | Find faces with YuNet; say which are the same person with SFace |
+
+`site/` is a small Symfony app that turns the attributes into a page: a table
+of contents, and for each example the picture before, the picture after, and
+the PHP in between. It runs the examples when a result is missing or out of date.
+
+```bash
+cd site && composer install
+php bin/console app:export ../../opencv-php-site     # the site as static files
+```
+
+The two face examples are ported from
+[php-opencv/php-opencv-examples](https://github.com/php-opencv/php-opencv-examples)
+by [morozovsk](https://github.com/morozovsk), written for the
+[php-opencv](https://github.com/php-opencv/php-opencv) extension on OpenCV 4.
+They need an OpenCV built with `dnn` (not the lean build below), models from
+the [OpenCV zoo](https://github.com/opencv/opencv_zoo) and a photograph of
+your own; `examples/src/Faces.php` says which. The rest of that collection
+needs the `dnn` module or the contrib `face` and `xobjdetect` modules, which
+are not wrapped yet.
+
+The gravestone, coin and QR photographs are by Tac Tacelosky; the prints are
+from DOCUMERICA, held by the U.S. National Archives.
+
 ## Install
 
 Needs OpenCV 5 with its `opencv5.pc` visible to pkg-config, and a C++17 compiler.
@@ -78,7 +131,9 @@ pie install tacman/opencv-php
 ```
 
 PIE builds the extension on your machine, so OpenCV 5 must already be installed
-where `pkg-config` can find it. To build from a checkout instead:
+where `pkg-config` can find it: `brew install opencv` on macOS. Debian and
+Ubuntu still package OpenCV 4; `docker/pie.Dockerfile` builds OpenCV 5 and then
+runs the same `pie install`. To build from a checkout instead:
 `pie repository:add path /path/to/opencv-php`, then
 `pie install 'tacman/opencv-php:*@dev'`.
 

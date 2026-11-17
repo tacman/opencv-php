@@ -42,3 +42,7 @@
 /docs/internal/
 /configure~
 /lean-build.log
+
+# examples: results, and models fetched by the user
+/examples/out/
+/examples/models/
