@@ -9,6 +9,7 @@
     },
     "php-ext": {
         "extension-name": "opencv",
+        "download-url-method": ["pre-packaged-binary", "composer-default"],
         "configure-options": [
             {
                 "name": "with-opencv",
