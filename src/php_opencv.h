@@ -10,10 +10,16 @@
 #define PHP_OPENCV_H
 
 #include <opencv2/core.hpp>
+#include <cstddef>
 #include <new>
 #include <string>
 #include <type_traits>
 #include <vector>
+
+/* PHP 8.6 removed XtOffsetOf; the standard offsetof does the same. */
+#ifndef XtOffsetOf
+#define XtOffsetOf(type, member) offsetof(type, member)
+#endif
 
 extern "C" {
 #ifdef HAVE_CONFIG_H
