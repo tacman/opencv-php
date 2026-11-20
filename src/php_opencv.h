@@ -30,7 +30,7 @@ extern "C" {
 #include "zend_exceptions.h"
 }
 
-#define PHP_OPENCV_VERSION "0.2.0"
+#define PHP_OPENCV_VERSION "0.2.1"
 #define PHP_OPENCV_EXTNAME "opencv"
 
 extern zend_module_entry opencv_module_entry;
